@@ -29,27 +29,22 @@ Above is enough for installing Cypress.
 
 ### Creating Helper
 
-- The class is import in the cypress's `home_page_spec.js` that is exported in helper.
+- Import the helper's class in the cypress's `home_page_spec.js`.
 
 ```typescript
-import {ClassName} from '{helperPath}';
+    import {ClassName} from '{helperPath}';
 ```
 
-- Then the imported class is used to create the selector function.
-
-- By the above scenario we can create as follows
+- Then the imported class is used to initialize the helper.
 
 ```typescript
-  it('successfully loads', function (done) {
-        cy.visit('application hosting URL').then(function () {
-            curObj = new ClassName(args);
-            done();
-        });
-    });
+    curObj = new ClassName(args);
+```
 
-    it('Simple test', function () {
-        curObj.getElement().should('have.value', '');
-    });
+- get the helper function to test the selectors elements.
+
+```typescript
+    curObj.getElement().should('have.value', '');
 ```
 
 ## How To Run This POC
