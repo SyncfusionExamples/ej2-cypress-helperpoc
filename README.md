@@ -25,8 +25,13 @@ Above is enough for installing Cypress.
 
 - Create the new spec file called `home_page_spec.js` for hosting the application.
 - Then create the sample spec helper file which is to be tested by using cypress.
-- Here we can use the wrapper for testing the test cases in cypress as well as protractor.   
+- Here we can use the wrapper for testing the test cases in cypress as well as protractor.
 
+## How To Run This POC
 
-
-
+- Clone/download it into locally.
+- Extract the node_modules.
+- Open the cypress test runner by executing the `npx cypress open` command from the project's root folder.
+- Then Cypress Test Runner will launch. Click the  `home_page_spec.js` file in the `cypress/integration/` location.
+- And also check the helper function file Cypress in `testDropdownlist.js` at
+`cypress/integration/helpers/dropdownlistHelper/`
