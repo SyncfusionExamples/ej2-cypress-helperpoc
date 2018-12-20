@@ -27,6 +27,49 @@ Above is enough for installing Cypress.
 - Then create the sample spec helper file which is to be tested by using cypress.
 - Here we can use the wrapper for testing the test cases in cypress as well as protractor.
 
+### Creating Helper
+
+```typescript
+export class ClassName {
+
+    constructor(id, wrapperFn) {
+        this.id = id;
+        this.wrapperFn = wrapperFn
+        return this;
+    }
+
+    selector(arg) {
+        return (this.wrapperFn ? this.wrapperFn(arg) : arg);
+    }
+
+     getElement() {
+        return this.selector('#' + this.id);
+    }
+```
+
+- The above class is import in the cypress's `home_page_spec.js`
+
+```typescript
+import {ClassName} from '{helperPath}';
+```
+
+- Then the imported class is used to create the selector function.
+
+- By the above scenario we can create as follows
+
+```typescript
+  it('successfully loads', function (done) {
+        cy.visit('application hosting URL').then(function () {
+            curObj = new ClassName(args);
+            done();
+        });
+    });
+
+    it('Simple test', function () {
+        curObj.getElement().should('have.value', '');
+    });
+```
+
 ## How To Run This POC
 
 - Clone/download it into locally.
