@@ -30,7 +30,7 @@ Above is enough for installing Cypress.
 ### Creating Helper
 
 ```typescript
-export class DropdownHelper {
+export class ClassName {
 
     constructor(id, wrapperFn) {
         this.id = id;
@@ -41,31 +41,34 @@ export class DropdownHelper {
     selector(arg) {
         return (this.wrapperFn ? this.wrapperFn(arg) : arg);
     }
+
+     getElement() {
+        return this.selector('#' + this.id);
+    }
 ```
 
 - The above class is import in the cypress's `home_page_spec.js`
 
 ```typescript
-import {export class name in helper} from '{helperPath}';
+import {ClassName} from '{helperPath}';
 ```
 
-- Then the imported class is used to create the object instance.
+- Then the imported class is used to create the selector function.
 
 - By the above scenario we can create as follows
 
 ```typescript
   it('successfully loads', function (done) {
-        cy.visit('').then(function () {
-            curDropDown = new DropdownHelper('icons', cy.get);
+        cy.visit('application hosting URL').then(function () {
+            curObj = new ClassName(args);
             done();
         });
     });
 
-    it('Simple test1', function () {
-        curDropDown.getElement().should('have.value', '');
+    it('Simple test', function () {
+        curObj.getElement().should('have.value', '');
     });
 ```
-- Here the `cy.get` is a selector for element.
 
 ## How To Run This POC
 
