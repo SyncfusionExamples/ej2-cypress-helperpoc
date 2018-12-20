@@ -29,25 +29,7 @@ Above is enough for installing Cypress.
 
 ### Creating Helper
 
-```typescript
-export class ClassName {
-
-    constructor(id, wrapperFn) {
-        this.id = id;
-        this.wrapperFn = wrapperFn
-        return this;
-    }
-
-    selector(arg) {
-        return (this.wrapperFn ? this.wrapperFn(arg) : arg);
-    }
-
-     getElement() {
-        return this.selector('#' + this.id);
-    }
-```
-
-- The above class is import in the cypress's `home_page_spec.js`
+- The class is import in the cypress's `home_page_spec.js` that is exported in helper.
 
 ```typescript
 import {ClassName} from '{helperPath}';
