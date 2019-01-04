@@ -4,7 +4,7 @@
     "description": "This POC provides the information about simple wrapper test cases by using cypress.",
     "main": "index.js",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "cypress:open": "cypress open"
     },
     "repository": {
         "type": "git",
