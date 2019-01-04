@@ -1,0 +1,22 @@
+{
+    "name": "ej2-cypress-helperpoc",
+    "version": "1.0.0",
+    "description": "This POC provides the information about simple wrapper test cases by using cypress.",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/SyncfusionExamples/ej2-cypress-helperpoc.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/SyncfusionExamples/ej2-cypress-helperpoc/issues"
+    },
+    "homepage": "https://github.com/SyncfusionExamples/ej2-cypress-helperpoc#readme",
+    "devDependencies": {
+        "cypress": "3.1.4"
+    }
+}
