@@ -20,4 +20,4 @@ export class DropdownHelper {
 
 }
 
-module.exports = DropdownHelper
+module.exports = DropdownHelper;
