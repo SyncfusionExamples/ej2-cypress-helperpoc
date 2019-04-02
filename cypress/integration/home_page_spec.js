@@ -7,7 +7,7 @@ describe('The Home Page', function () {
 
     it('successfully loads', function (done) {
         cy.visit('https://ej2.syncfusion.com/demos/#/material/drop-down-list/grouping-icon.html').then(function () {
-            curDropDown = new DropDownHelper('icons', cy.get);
+            curDropDown = new DropDownListHelper('icons', cy.get);
             done();
         });
     });
@@ -23,7 +23,7 @@ describe('The Home Page', function () {
 
     it('Event handling', function () {
         curDropDown.eventHandler('change', function (e) {
-            debugger;
+            expect(e.name).to.eq('change');
         });
         cy.get('[data-value="media2"]').trigger("click");
     });
