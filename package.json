@@ -18,7 +18,7 @@
     "homepage": "https://github.com/SyncfusionExamples/ej2-cypress-helperpoc#readme",
     "devDependencies": {
         "cypress": "3.1.4",
-        "@syncfusion/ej2-base": "*",
-        "@syncfusion/ej2-dropdowns": "*"
+        "@syncfusion/ej2-base": "17.1.38",
+        "@syncfusion/ej2-dropdowns": "17.1.38"
     }
 }
