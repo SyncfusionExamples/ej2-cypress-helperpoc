@@ -1,12 +1,9 @@
 import { DropDownListHelper } from '@syncfusion/ej2-dropdowns/helpers/e2e';
 
-
-
 describe('The Home Page', function () {
     var curDropDown;
-
     it('successfully loads', function (done) {
-        cy.visit('https://ej2.syncfusion.com/demos/#/material/drop-down-list/grouping-icon.html').then(function () {
+        cy.visit('https://ej2.syncfusion.com/demos/drop-down-list/grouping-icon/index.html').then(function () {
             curDropDown = new DropDownListHelper('icons', cy.get);
             done();
         });
@@ -17,15 +14,11 @@ describe('The Home Page', function () {
         curDropDown.getModel("value").should('eq', 'media1');
     });
 
-    it('invoke function', function () {
+    it('events and method testing', function () {
         curDropDown.invoke("showPopup");
-    });
-
-    it('Event handling', function () {
-        curDropDown.eventHandler('change', function (e) {
-            expect(e.name).to.eq('change');
+        curDropDown.eventHandler('change', (e) => {
+            expect(e.value).to.eq('media2');
         });
         cy.get('[data-value="media2"]').trigger("click");
     });
-
 });
